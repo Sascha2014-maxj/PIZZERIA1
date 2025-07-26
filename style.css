@@ -1,0 +1,448 @@
+/* Загальні стилі */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Шапка */
+.header {
+  height: 100px;
+  background-color: #FFC700;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Логотип */
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Навігація */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-right: 50px;
+}
+
+/* Назва сторінки */
+.page-title {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+/* Пункти меню */
+.menu-item {
+  width: 100px;
+  text-align: center;
+}
+
+.menu-item a {
+  font-weight: 300;
+  font-size: 20px;
+  color: #1E1E1E;
+  text-decoration: none;
+  display: block;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 75px;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  color: #575757;
+  margin: 0 0 20px 0;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 75px;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+h4 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 56px;
+  color: #575757;
+  margin-top: 100px;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  color: #FFC700;
+  margin: 0 0 10px 0;
+}
+
+h6 {
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 75px;
+  color: #575757;
+  margin: 0 0 20px 0;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Опис під заголовком */
+.p {
+  position: absolute;
+  width: 502px;
+  left: 88px;
+  top: 396px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+/* Кнопка "Перейти в меню" */
+.ab a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 221px;
+  height: 55px;
+  background: #FFFFFF;
+  border: 1px solid #FFC700;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.abc {
+  font-weight: 400;
+  font-size: 24px;
+  color: #FFC700;
+}
+
+/* Блок меню */
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+/* Окрема позиція меню */
+.menu-item-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 800px;
+  text-align: left;
+  margin: 20px auto;
+}
+
+.menu-item-container img {
+  width: 450px;
+  border-radius: 10px;
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.efef {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  margin: 0;
+}
+
+.df {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FF6B00;
+  margin-top: 15px;
+}
+
+/* Кнопка замовлення */
+.order-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 221px;
+  height: 55px;
+  background: #FFC700;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Модальне вікно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.menu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-img {
+  width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.menu-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.intro {
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание по центру */
+  gap: 20px; /* Отступ между картинкой и текстом */
+  padding: 20px;
+}
+
+.intro-text p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  max-width: 400px; /* Максимальная ширина блока с текстом */
+}
+
+-
+#pizzaQuantity {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#confirmOrderBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #FFC700;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#confirmOrderBtn:hover {
+  background-color: #e6b600;
+}
+
+#totalPriceText {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Group 1 */
+.bmb {
+  width: 120px;
+  height: 120px;
+  background-color: #FFA500; /* помаранчевий */
+  color: white;
+  border-radius: 50%; /* круг */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 20px 40px; /* верхній, правий, нижній, ЛІВИЙ відступ */
+  font-size: 40px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.promo-container {
+  display: flex;
+  justify-content: space-between; /* розкидає по ширині */
+  padding: 0 40px;
+  margin-top: 30px;
+}
+
+.promo-circle {
+  width: 240px;
+  height: 240px;
+  background-color: #FFA500;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* необов'язково — якщо хочеш змінити розташування окремо */
+.promo-circle.center {
+  justify-self: center;
+}
+
+.promo-circle.right {
+  justify-self: flex-end;
+}
+
+.brbrpatapim{
+color: white;
+background-color: #FFC700;
+font-size: 23px;
+padding: 30px;
+box-shadow: 5 10px 10px rgba(0,0,0,0.2)
+}
+
+.fbf {
+background-color: #FFA500;
+text-align: left;
+font-size: 30px;
+padding: 50px;
+}
+
+h7{
+text-align: left;
+color: #fff;
+}
+
+.icon {
+width: 120px;
+height: 120px;
+}
+
+.con{
+height: 100px;
+width: 100px;
+}
+
+.container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      width: 80px;
+      height: 80px;
+      border: none;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background: #357ab8;
+      transform: scale(1.15);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn:active {
+      transform: scale(1.05);
+      background: #f1ab14;
+    }
+
+    button, 
+.order-button, 
+.contact-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #FFC700, #FF6B00);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover, 
+.order-button:hover, 
+.contact-button:hover {
+  background: linear-gradient(45deg, #FF6B00, #FFC700);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
