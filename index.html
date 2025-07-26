@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>PIZZA</title>
+</head>
+
+<body>
+<header>
+  <section class="header">
+    <div class="logo">PIZZA</div>
+
+    <nav>
+      <div class="page-title">Головна</div>
+      <section class="menu-item"><a href="#bs">Меню</a></section>
+      <section class="menu-item"><a href="#mt">Акції</a></section>
+      <section class="menu-item"><a href="#d">Про нас</a></section>
+      <section class="menu-item"><a href="#s">Контакти</a></section>
+    </nav>
+  </section>
+</header>
+
+<section class="intro">
+  <img src="https://img.freepik.com/premium-vector/special-pizza-cartoon-style_573652-458.jpg" alt="Pizza" class="intro-img">
+  <div class="intro-text">
+    <h1>Піцерія</h1>
+    <p>Щоб замовити піццу потрібно перейти в меню і натиснути кнопку "Замовити"</p>
+  </div>
+</section>
+
+  <nav class="ab">
+    <a href="#bs"><section class="abc">Меню</section></a>
+  </nav>
+
+ <section class="menu-section">
+  <h2 id="bs">Меню</h2>
+
+  <!-- Піца 1 -->
+  <div class="menu-card">
+    <img class="menu-img" src="https://pizza.od.ua/upload/resize_cache/webp/iblock/62e/4y05ehhgm88eupox5eh111jo1k2e94mq.webp" alt="Пепероні">
+    <div class="menu-text">
+      <h5>Папероні</h5>
+      <p class="efef">Перетерті томати, борошна, моцарела, салямі пікантна пепероні</p>
+      <p class="df">180 грн</p>
+      <a class="order-button" href="#">Замовити</a>
+    </div>
+  </div>
+
+  <!-- Піца 2 -->
+  <div class="menu-card">
+    <img class="menu-img" src="https://playpizza.com.ua/media/cache/product/uploads/images/products/47.png" alt="Пепероні">
+    <div class="menu-text">
+      <h5>Чотири сезони</h5>
+      <p class="efef">Перетерті томати, моцарелла, прошутто котто, артишоки, свіжі печериці, салямі Мілано</p>
+      <p class="df">210 грн</p>
+      <a class="order-button" href="#">Замовити</a>
+    </div>
+  </div>
+ <div class="menu-card">
+    <img class="menu-img" src="https://ninjachef.ru/upload/resize_cache/iblock/473/380_2000_1/473501ee9b4fb150710a80f189fecd85.jpg" alt="Пепероні">
+    <div class="menu-text">
+      <h5>Лосось</h5>
+      <p class="efef">Тісто з цільнозернового борошна, моцарелла, рікотта, прошутто котто, орегано, базилік та мигдалеві пластівці. </p>
+      <p class="df">250 грн</p>
+      <a class="order-button" href="#">Замовити</a>
+    </div>
+  </div>
+</section>
+<div class="menu-card">
+    <img class="menu-img" src="https://pizza.od.ua/upload/resize_cache/webp/iblock/f38/f38b33ebe98b8cecec084e14553c608f.webp" alt="Пепероні">
+    <div class="menu-text">
+      <h5>Чотири сири</h5>
+      <p class="efef">Тісто, Моцарела, Пармезан, Емменталь, Орегано, Базилік, Томатний соус. </p>
+      <p class="df">200 грн</p>
+      <a class="order-button" href="#">Замовити</a>
+    </div>
+  </div>
+<div class="menu-card">
+    <img class="menu-img" src="https://pizza.od.ua/upload/resize_cache/webp/upload/iblock/938/938bdda282918434c9ab587e0c10f8f3.webp" alt="Пепероні">
+    <div class="menu-text">
+      <h5>Піцца з вічіною</h5>
+      <p class="efef">Тісто, Шинка, СирТоматний соус, Помідори, Гриби, Цибуля, Маслини, Перець, Спеції. </p>
+      <p class="df">260 грн</p>
+      <a class="order-button" href="#">Замовити</a>
+    </div>
+  </div>
+<div class="menu-card">
+    <img class="menu-img" src="https://aleksandrsann.od.ua/image/cache/catalog/pizza/updated/margaritta-370x370h.png" alt="Пепероні">
+    <div class="menu-text">
+      <h5>Маргарита</h5>
+      <p class="efef">Тісто, Томатний соус, Моцарела, Базилік, Оливкова олія. </p>
+      <p class="df">150 грн</p>
+      <a class="order-button" href="#">Замовити</a>
+    </div>
+  </div>
+
+ <div id="orderConfirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h4>Оформлення замовлення</h4>
+    <p id="selectedPizzaName"></p>
+    <p id="selectedPizzaPrice"></p>
+
+    <label for="pizzaQuantity">Кількість:</label>
+    <input type="number" id="pizzaQuantity" min="1" value="1">
+
+    <p id="totalPriceText">Загальна вартість: <span id="totalPrice">0 грн</span></p>
+    <button id="confirmOrderBtn">Підтвердити замовлення</button>
+  </div>
+</div>
+
+ <script>
+  const modal = document.getElementById("orderConfirmationModal");
+  const closeButton = modal.querySelector(".close-button");
+  const orderButtons = document.querySelectorAll(".order-button");
+  const pizzaQuantityInput = document.getElementById("pizzaQuantity");
+  const totalPriceText = document.getElementById("totalPrice");
+  const selectedPizzaName = document.getElementById("selectedPizzaName");
+  const selectedPizzaPrice = document.getElementById("selectedPizzaPrice");
+
+  let currentPizzaPrice = 0;
+
+  orderButtons.forEach(button => {
+    button.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const card = this.closest(".menu-card");
+      const name = card.querySelector("h5").textContent;
+      const priceText = card.querySelector(".df").textContent;
+      const price = parseInt(priceText);
+
+      currentPizzaPrice = price;
+
+      selectedPizzaName.textContent = `Піца: ${name}`;
+      selectedPizzaPrice.textContent = `Ціна за одну піццу: ${price} грн`;
+      pizzaQuantityInput.value = 1;
+      totalPriceText.textContent = `${price} грн`;
+
+      modal.style.display = "flex";
+      updateTotalPrice();
+    });
+  });
+
+  function updateTotalPrice() {
+    const quantity = parseInt(pizzaQuantityInput.value);
+    const total = currentPizzaPrice * quantity;
+    totalPriceText.textContent = `${total} грн`;
+  }
+
+  pizzaQuantityInput.addEventListener("input", updateTotalPrice);
+
+  closeButton.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  document.getElementById("confirmOrderBtn").addEventListener("click", function() {
+    alert("Дякуємо за замовлення! Очікуйте доставку.");
+    modal.style.display = "none";
+  });
+</script>
+</body>
+
+
+<h6 id="mt">Акції</h6>
+<div class="promo-container">
+  <div class="promo-circle">1+1=3</div>
+  <div class="promo-circle center">-20% після 21:00</div>
+  <div class="promo-circle right">-50% до Дня народженя</div>
+</div>
+<h6 id="d">Про нас</h6>
+<section class="brbrpatapim">
+<p>В Італії розуміються на справжній піці і випікають її тільки в автентичній дров'яній печі. І ми в il Molino повністю дотримуємося рецептури традиційних італійських піцерій. Всередині така піч воістину «пашить жаром», щоб забезпечити рівномірне випікання: температура в її надрах сягає близько 400 градусів. І тому на правильній, «живій» італійській піці неминучі невеликі пригорілості - потемнілі бортики або запечені «бульбашки». </p>
+</section>
+<section class="fbf">
+<h7 id="s">+38(099) - 55 - 33-456</h7>
+<p>місто Львів вул.</p>
+<p> Богдана Хмельницького 14</p>
+<body>
+    <img src="https://i.postimg.cc/Z5vsdLYL/Chat-GPT-Image-24-2025-17-23-24.png" alt="Instagram" class="icon">
+    <img src="https://i.postimg.cc/dQBVb2Yn/20673.png" alt="Instagram" class="con">
+    <div class="container">
+    <button class="btn">1</button>
+    <section class="mgd">
+    <button class="btn"><a href=" https://sascha2014-maxj.github.io/PIZZERIA/">2</a></button>
+    </section>
+  </div>
+</body>
+</section>
+</html>
